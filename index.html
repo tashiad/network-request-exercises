@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <html lang="en-US">
-    <title>Network Request Exercises</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-  </head>
-  <body>
-    <h1>Fun Facts About Animals</h1>
-    <div id="display-animals"></div>
-    <button class="animal-button">DELETE ANIMAL</button>
-  <script type="text/javascript" src="./scripts.js"></script>
-  </body>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <html lang="en-US">
+  <title>Network Request Exercises</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+  <h1>Animals API Fun!</h1>
+  <section class="form">
+    <h2>Add A New Animal</h2>
+    <form class="create-animal-form">
+      <label class="name-label" for="animal-name"><b>Name:</b></label>
+      <input type="text" name="animal-name" class="animal-name-input" />
+      <label class="diet-label" for="animal-diet"><b>Diet:</b></label>
+      <input type="text" name="animal-diet" class="animal-diet-input" />
+      <label class="fun-fact-label" for="animal-fun-fact"><b>Fun Fact:</b></label>
+      <input type="text" name="animal-fun-fact" class="animal-fun-fact-input" />
+      <button class="create-button">Add Animal</button>
+    </form>
+  </section>
+  <section class="display-area"></section>
+</body>
+<script type="text/javascript" src="./scripts.js"></script>
+
 </html>
