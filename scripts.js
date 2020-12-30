@@ -14,17 +14,17 @@ createButton.addEventListener('click', createAnimal);
 function retrieveData() {
   fetch("http://localhost:3001/api/v1/animals")
     .then(response => response.json())
-    .then(data => showAnimals(data));
+    .then(data => showAnimals(data))
+    .catch(error => console.log(error));
 }
 
 function showAnimals(data) {
-  displayArea.innerHTML = '';
-  data.forEach(data => {
+  data.forEach(animal => {
     displayArea.innerHTML += `
-    <article>
-      <h2>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-      <p><strong>Diet: </strong>${data.diet}</p>
-      <p><strong>Fun Fact: </strong>${data.fun_fact}</p>
+    <article id=${animal.id}>
+      <h2>${animal.name.charAt(0).toUpperCase() + animal.name.slice(1)}</h2>
+      <p><strong>Diet: </strong>${animal.diet}</p>
+      <p><strong>Fun Fact: </strong>${animal.fun_fact}</p>
     </article>
   `
   })
@@ -44,17 +44,15 @@ function createAnimal() {
       })
     })
     .then(response => response.json())
-    .then(data => retrieveData());
+    .then(data => retrieveData())
+    .catch(error => console.log(error));
   clearInputs();
-  retrieveData();
 }
 
 function clearInputs() {
-  // idInput.value = "";
   nameInput.value = "";
   dietInput.value = "";
   funFactInput.value = "";
-  deleteAnimalByID.value = "";
 }
 
 // function deleteAnimal() {
@@ -65,10 +63,15 @@ function clearInputs() {
 //       }
 //     })
 //     .then(response => response.json())
-//     .then(data => retrieveData());
+//     .then(data => retrieveData())
+//     .catch(error => console.log(error));
 //   clearInputs();
 // }
 
+
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // const displayUsers = document.querySelector("#display-users");
 // const displayAnimals = document.querySelector("#display-animals");
 // const animalButton = document.querySelector(".animal-button")
